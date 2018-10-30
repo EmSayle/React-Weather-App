@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ForecastSummary from '../src/components/forecast-summary';
+import Moment from 'moment';
 
 it('renders the date', () => {
   const wrapper = shallow((
@@ -47,9 +48,9 @@ it('renders the icon', () => {
       date="mockDate"
       temperature="mockTemperature"
       description="mockDescription"
-      icon="mockIcon"
+      icon={'<WeatherIcon/>'}
     />
   ));
 
-  expect(wrapper.find('.forecast-summary__icon').text()).toEqual('mockIcon');
+  expect(wrapper.find('.forecast-summary__icon').text()).toEqual('<WeatherIcon />');
 });
